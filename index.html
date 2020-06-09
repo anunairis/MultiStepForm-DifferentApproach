@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Step Form</title>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body class="main">
+    <!---------- NEW TRY FROM W3 ------------->
+    <form id="form-container" action="">
+
+        <ul id="progressbar">
+            <li id="first-li" class="step">Account Setup</li>
+            <li id="second-lin" class="step" >Personal Details</li>
+        </ul>
+
+        <fieldset class="form">
+            <div class="form-title">
+                <h2>CREATE AN ACCOUNT</h2>
+                <h3>Personal Data</h3>
+                <h4>STEP 1</h4>
+            </div>
+            <input type="text" id="name" class="name" placeholder="Name" oninput="this.className = ''">
+            <input type="email" id="email" class="email" placeholder="Email" oninput="this.className = ''">
+        </fieldset>
+
+        <fieldset class="form">
+            <div class="form-title">
+                <h3>How To Contact You</h3>
+                <h4>STEP 2</h4>
+            </div>
+            <input type="tel" id="phone" class="phone" placeholder="Phone" oninput="this.className = ''">
+            <input type="address" id="address" class="address" placeholder="Address" oninput="this.className = ''">
+        </fieldset>
+
+        <!-- <input type="button" class="action-button" id="previousButton" value="Previous" />
+        <input type="button" class="next action-button" id="nextButton" value="Next" /> -->
+
+        <button type="button" class="action-button" id="previousButton" onclick="buttonClick(-1)">Previous</button>
+        <button type="button" class="action-button" id="nextButton" onclick="buttonClick(1)">Next</button>
+    </form>
+
+    <script src="js.js"></script>
+</body>
+
+</html>
+
+
+<!-- <form id="form-container" action="">
+
+        <ul id="progressbar">
+            <li id="first-li" class="active">Account Setup</li>
+            <li id="second-li">Personal Details</li>
+        </ul>
+
+        <fieldset class="form visible" id="step1">
+            <div class="form-title">
+                <h2>CREATE AN ACCOUNT</h2>
+                <h3>Personal Data</h3>
+                <h4>STEP 1</h4>
+            </div>
+            <input type="text" id="name" class="name" placeholder="Name">
+            <input type="email" id="email" class="email" placeholder="Email">
+            <input type="button" class="next action-button" id="nextButton" value="Next" />
+        </fieldset>
+
+        <fieldset class="form" id="step2">
+            <div class="form-title">
+                <h2>CREATE AN ACCOUNT</h2>
+                <h3>How To Reach You</h3>
+                <h4>STEP 2</h4>
+            </div>
+            <input type="tel" id="phone" class="phone" placeholder="Phone">
+            <input type="text" id="address" class="address" placeholder="Address">
+            <input type="button" class="previous action-button" id="previousButton" value="Previous" />
+            <input type="submit" class="submit action-button" id="submitButton" value="Submit" />
+        </fieldset>
+
+
+        <fieldset class="form visible" id="step1">
+            <div class="form-title">
+                <h2>CREATE AN ACCOUNT</h2>
+                <h3>Personal Data Again</h3>
+                <h4>STEP 3</h4>
+            </div>
+            <input type="text" id="name" class="name" placeholder="Name">
+            <input type="email" id="email" class="email" placeholder="Email">
+            <input type="button" class="next action-button" id="nextButton" value="Next" />
+        </fieldset>
+
+    </form> -->

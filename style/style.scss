@@ -1,0 +1,140 @@
+$primary-color: rgb(18, 105, 37);
+$primary-color-light: rgba(18, 105, 37, 0.70);
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+
+    .main {
+        height: 100vh;
+        width: 100vw;
+        background: rgb(212, 208, 208);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        #form-container {
+            align-self: center;
+            text-align: center;
+            margin: auto;
+            width: 40%;
+            background-color: white;
+            box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
+            padding: 5%;
+
+            /*progressbar*/
+            #progressbar {
+                margin-bottom: 30px;
+                overflow: hidden;
+                counter-reset: step;
+                padding: 0;
+                width: 155%;
+
+                li {
+                    list-style-type: none;
+                    color: $primary-color;
+                    text-transform: uppercase;
+                    font-size: 12px;
+                    width: 33.33%;
+                    float: left;
+                    position: relative;
+
+
+                    &:before {
+                        content: counter(step);
+                        counter-increment: step;
+                        width: 28px;
+                        line-height: 28px;
+                        display: block;
+                        font-size: 18px;
+                        color: #333;
+                        background: white;
+                        border-radius: 3px;
+                        margin: 0 auto 5px auto;
+                        color: $primary-color;
+                    }
+
+                    /*marking active/completed steps green*/
+                    /*The number of the step and the connector before it = green*/
+                    &.active:before,
+                    &.active:after {
+                        background-color: $primary-color;
+                        color: white;
+                    }
+
+                    &.active {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .form {
+                border: none;
+                display: none;
+
+
+
+                &-title {
+                    color: rgb(85, 83, 83);
+                    font-weight: bold;
+                    margin: 0;
+                    padding: 0;
+
+                    h3 {
+                        color: $primary-color;
+                        margin: 10px 0;
+                        font-size: 24px;
+                    }
+
+                    h4 {
+                        text-decoration: underline;
+                    }
+                }
+
+                input {
+                    padding: 12px;
+                    box-sizing: border-box;
+                    font-size: 14px;
+                    margin-top: 15px;
+                    width: 80%;
+                    border: 1px solid gray;
+                    background-color: transparent;
+
+                    &:focus,
+                    &:active,
+                    &:visited,
+                    &:focus-within {
+                        outline-width: 0;
+                        outline: 0;
+                        background-color: transparent;
+                    }
+
+                    &.invalid {
+                        background-color: rgba(246, 93, 93, 0.253);
+                    }
+                }
+            }
+
+            .action-button {
+                background: $primary-color;
+                font-weight: bold;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 40%;
+                overflow: auto;
+                padding: 10px 0px;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    box-shadow: 0 0 0 2px white, 0 0 0 3px rgba(18, 105, 37, 0.705);
+                    background-color: $primary-color-light;
+                    border: none;
+                    outline-width: 0;
+                }
+            }
+        }
+    }
+}

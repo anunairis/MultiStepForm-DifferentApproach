@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* .main {
+  height: 100vh;
+  width: 100vw;
+  background: #d4d0d0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+* .main #form-container {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  margin: auto;
+  width: 40%;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
+  padding: 5%;
+  /*progressbar*/
+}
+
+* .main #form-container #progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  counter-reset: step;
+  padding: 0;
+  width: 155%;
+}
+
+* .main #form-container #progressbar li {
+  list-style-type: none;
+  color: #126925;
+  text-transform: uppercase;
+  font-size: 12px;
+  width: 33.33%;
+  float: left;
+  position: relative;
+  /*marking active/completed steps green*/
+  /*The number of the step and the connector before it = green*/
+}
+
+* .main #form-container #progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 28px;
+  line-height: 28px;
+  display: block;
+  font-size: 18px;
+  color: #333;
+  background: white;
+  border-radius: 3px;
+  margin: 0 auto 5px auto;
+  color: #126925;
+}
+
+* .main #form-container #progressbar li.active:before, * .main #form-container #progressbar li.active:after {
+  background-color: #126925;
+  color: white;
+}
+
+* .main #form-container #progressbar li.active {
+  text-decoration: underline;
+}
+
+* .main #form-container .form {
+  border: none;
+  display: none;
+}
+
+* .main #form-container .form-title {
+  color: #555353;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+* .main #form-container .form-title h3 {
+  color: #126925;
+  margin: 10px 0;
+  font-size: 24px;
+}
+
+* .main #form-container .form-title h4 {
+  text-decoration: underline;
+}
+
+* .main #form-container .form input {
+  padding: 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 14px;
+  margin-top: 15px;
+  width: 80%;
+  border: 1px solid gray;
+  background-color: transparent;
+}
+
+* .main #form-container .form input:focus, * .main #form-container .form input:active, * .main #form-container .form input:visited, * .main #form-container .form input:focus-within {
+  outline-width: 0;
+  outline: 0;
+  background-color: transparent;
+}
+
+* .main #form-container .form input.invalid {
+  background-color: rgba(246, 93, 93, 0.253);
+}
+
+* .main #form-container .action-button {
+  background: #126925;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 40%;
+  overflow: auto;
+  padding: 10px 0px;
+}
+
+* .main #form-container .action-button:hover, * .main #form-container .action-button:focus, * .main #form-container .action-button:active {
+  -webkit-box-shadow: 0 0 0 2px white, 0 0 0 3px rgba(18, 105, 37, 0.705);
+          box-shadow: 0 0 0 2px white, 0 0 0 3px rgba(18, 105, 37, 0.705);
+  background-color: rgba(18, 105, 37, 0.7);
+  border: none;
+  outline-width: 0;
+}
+/*# sourceMappingURL=style.css.map */
